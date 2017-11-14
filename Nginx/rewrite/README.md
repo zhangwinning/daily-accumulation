@@ -14,7 +14,7 @@ Context: server, location, if
 
 * 正则表达式
 
-     小括号（） 用于匹配括号之间的内容，通过 $1、$2 调用
+  小括号（） 用于匹配括号之间的内容，通过 $1、$2 调用
 
 ```
 if ($http_user_agent ~ MSIE) {
@@ -25,7 +25,7 @@ if ($http_user_agent ~ MSIE) {
 
 * flag 标记位
 
-       标记rewrite的类型
+   标记rewrite的类型
 
 | 类型 | 解释 |
 | :---: | :---: |
@@ -52,6 +52,20 @@ if ($http_user_agent ~ MSIE) {
           }
   }
   ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
