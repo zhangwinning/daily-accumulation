@@ -23,5 +23,9 @@ if ($http_user_agent ~ MSIE) {
 //代理是MSIN的，如果是/test.html ,会跳转到/msin/test.html 页面中
 ```
 
+* flag 标记位
+
+标记rewrite
+
 
 
