@@ -35,6 +35,7 @@ if ($http_user_agent ~ MSIE) {
 | pemanent | 返回301永久重定向，地址栏会显跳转后的地 |
 
 * 比较flag标记位的last、break
+
   ```
   server {
           listen  8000 ;
@@ -53,27 +54,7 @@ if ($http_user_agent ~ MSIE) {
   }
   ```
 
-      访问\`/break\` 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
 
 
 
