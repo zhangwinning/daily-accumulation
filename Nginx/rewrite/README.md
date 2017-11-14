@@ -33,7 +33,6 @@ if ($http_user_agent ~ MSIE) {
 | break | 停止rewrite检测 |
 | redirect | 返回302临时重定向，地址栏会显示跳转后的地址 |
 | pemanent | 返回301永久重定向，地址栏会显跳转后的地址 |
-|  |  |
 
 
 
