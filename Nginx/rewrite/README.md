@@ -56,5 +56,7 @@ if ($http_user_agent ~ MSIE) {
 
   访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
 
+       而请求\`/last\` 会匹配到第二个location，标志位是last，nginx会**再次发送一次请求**，请求url是域名+/test/，从而匹配第三个location。
+
 
 
