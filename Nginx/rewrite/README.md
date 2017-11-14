@@ -25,5 +25,13 @@ if ($http_user_agent ~ MSIE) {
 
 * flag 标记位
 
-标记rewrite对应的类型
+标记rewrite的类型
+
+|  |  |
+| :--- | :--- |
+|  |  |
+|  |  |
+|  |  |
+
+
 
