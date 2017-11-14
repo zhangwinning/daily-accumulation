@@ -27,10 +27,12 @@ if ($http_user_agent ~ MSIE) {
 
 标记rewrite的类型
 
-|  |  |
-| :--- | :--- |
-|  |  |
-|  |  |
+| 类型 | 解释 |
+| :---: | :---: |
+| last | 停止rewrite检测 |
+| break | 停止rewrite检测 |
+| redirect | 返回302临时重定向，地址栏会显示跳转后的地址 |
+| pemanent | 返回301永久重定向，地址栏会显跳转后的地址 |
 |  |  |
 
 
