@@ -148,11 +148,23 @@ redirect日志:
 {"status":"success", "remote_addr": 101.231.137.70}
 ```
 
-而redirect 和permanent 也可以重定向到其他的网页。
+而redirect 和permanent 也可以重定向到其他的网页。完成重定向
+
+
+
+
+
+
+
+
+
+
 
 
 
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
 [https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/](https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/)
+
+
 
