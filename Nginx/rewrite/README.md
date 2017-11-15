@@ -148,5 +148,5 @@ redirect日志:
 {"status":"success", "remote_addr": 101.231.137.70}
 ```
 
-
+[http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
