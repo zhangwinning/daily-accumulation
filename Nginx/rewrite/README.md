@@ -58,13 +58,27 @@ server {
 
 而访问\`/last\`会匹配第二个location，标志位是 last ，这时nginx会_重新匹配一个请求URL为/test/的_，匹配第三个location，返回结果。
 
-比较flag标记位的redirect、permanent
+比较flag标记位的redirect、last。
 
+```
+server {
+        listen  8000 ;
+        server_name localhost;
+        root /root/opt/app/code;
+        location ~^/last {
+                rewrite ^/last /test/ last;
+                rewrite ^/last /test/ redirect;
+        }
+        location /test/ {
+                default_type application/json;
+                return 200 '{"status":"success", "remote_addr": $remote_addr}';
+        }
+}
+```
 
+last在日志中就一条日志，客户端就发送一次请求。
 
-
-
-
+redirect是有两条日志，其中第一条是状态302，并且请求头中有location，为重定向的地址。第二条返回200。nignx一看是redirect，就重新发送一次请求，从而匹配第三个。
 
 
 
