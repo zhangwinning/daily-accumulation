@@ -56,9 +56,5 @@ server {
 
 访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
 
-而访问 \\`/break\\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
-
-
-
-
+而访问\`/last\`会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
 
