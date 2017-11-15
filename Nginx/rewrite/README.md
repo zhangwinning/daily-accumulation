@@ -150,3 +150,5 @@ redirect日志:
 
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
+[https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/](https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/)
+
