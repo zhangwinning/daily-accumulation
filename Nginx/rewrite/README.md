@@ -42,7 +42,7 @@ server {
         server_name localhost;
         root /root/opt/app/code;
         location ~^/break {
-                rewrite ^/break /test/  break;
+                rewrite ^/break /static/  break;
         }
         location ~^/last {
                 rewrite ^/last /test/ last;
@@ -54,7 +54,7 @@ server {
 }
 ```
 
-访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
+访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/static/目录的index.html文件，如果没有，返回404，找到显示。
 
 而访问\`/last\`会匹配第二个location，标志位是 last ，这时nginx会_重新匹配一个请求URL为/test/的_，匹配第三个location，返回结果。
 
@@ -79,6 +79,16 @@ server {
 last在日志中就一条日志，客户端就发送一次请求。
 
 redirect是有两条日志，其中第一条是状态302，并且请求头中有location，为重定向的地址。第二条返回200。nignx一看是redirect，就重新发送一次请求，从而匹配第三个。
+
+
+
+
+
+
+
+
+
+
 
 
 
