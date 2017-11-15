@@ -34,29 +34,31 @@ if ($http_user_agent ~ MSIE) {
 | redirect | 返回302临时重定向，地址栏会显示跳转后的地址 |
 | pemanent | 返回301永久重定向，地址栏会显跳转后的地 |
 
-* 比较flag标记位的last、break
+比较flag标记位的last、break
 
-  ```
-  server {
-          listen  8000 ;
-          server_name localhost;
-          root /root/opt/app/code;
-          location ~^/break {
-                  rewrite ^/break /test/  break;
-          }
-          location ~^/last {
-                  rewrite ^/last /test/ last;
-          }
-          location /test/ {
-                  default_type application/json;
-                  return 200 '{"status":"success", "remote_addr": $remote_addr}';
-          }
-  }
-  ```
+```
+server {
+        listen  8000 ;
+        server_name localhost;
+        root /root/opt/app/code;
+        location ~^/break {
+                rewrite ^/break /test/  break;
+        }
+        location ~^/last {
+                rewrite ^/last /test/ last;
+        }
+        location /test/ {
+                default_type application/json;
+                return 200 '{"status":"success", "remote_addr": $remote_addr}';
+        }
+}
+```
 
-  访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
+访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
 
-       而请求\`/last\` 会匹配到第二个location，标志位是last，nginx会**再次发送一次请求**，请求url是域名+/test/，从而匹配第三个location。
+而访问 \\`/break\\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/test/目录的index.html文件，如果没有，返回404，找到显示。
+
+
 
 
 
