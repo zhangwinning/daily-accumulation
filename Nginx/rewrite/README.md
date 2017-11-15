@@ -67,7 +67,7 @@ server {
         root /root/opt/app/code;
         location ~^/last {
                 rewrite ^/last /test/ last;
-                rewrite ^/last /test/ redirect;
+      #          rewrite ^/last /test/ redirect;
         }
         location /test/ {
                 default_type application/json;
@@ -82,20 +82,72 @@ redirect是有两条日志，其中第一条是状态302，并且请求头中有
 
 ```
 last日志:
+*   Trying 106.15.231.221...
+* Connected to 106.15.231.221 (106.15.231.221) port 8000 (#0)
+> GET /last HTTP/1.1
+> Host: 106.15.231.221:8000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Server: nginx/1.10.3 (Ubuntu)
+< Date: Wed, 15 Nov 2017 07:49:04 GMT
+< Content-Type: text/html
+< Content-Length: 165
+< Last-Modified: Wed, 15 Nov 2017 02:09:17 GMT
+< Connection: keep-alive
+< Vary: Accept-Encoding
+< ETag: "5a0ba1cd-a5"
+< Accept-Ranges: bytes
+<
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>test proxy</title>
+</head>
+<body style="background-color:red;">
+    <h1>this is test proxy</h1>
+</body>
+</html>
+
+redirect日志:
+*   Trying 106.15.231.221...
+* Connected to 106.15.231.221 (106.15.231.221) port 8000 (#0)
+> GET /last HTTP/1.1
+> Host: 106.15.231.221:8000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 302 Moved Temporarily
+< Server: nginx/1.10.3 (Ubuntu)
+< Date: Wed, 15 Nov 2017 07:51:14 GMT
+< Content-Type: text/html
+< Content-Length: 170
+< Location: http://106.15.231.221:8000/test/
+< Connection: keep-alive
+<
+* Ignoring the response-body
+* Connection #0 to host 106.15.231.221 left intact
+* Issue another request to this URL: 'http://106.15.231.221:8000/test/'
+* Found bundle for host 106.15.231.221: 0x7fc91b607150
+* Re-using existing connection! (#0) with host 106.15.231.221
+* Connected to 106.15.231.221 (106.15.231.221) port 8000 (#0)
+> GET /test/ HTTP/1.1
+> Host: 106.15.231.221:8000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Server: nginx/1.10.3 (Ubuntu)
+< Date: Wed, 15 Nov 2017 07:51:14 GMT
+< Content-Type: application/json
+< Content-Length: 51
+< Connection: keep-alive
+<
+* Connection #0 to host 106.15.231.221 left intact
+{"status":"success", "remote_addr": 101.231.137.70}
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
