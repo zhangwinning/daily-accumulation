@@ -58,6 +58,8 @@ server {
 
 而访问\`/last\`会匹配第二个location，标志位是 last ，这时nginx会_重新匹配一个请求URL为/test/的_，匹配第三个location，返回结果。
 
+~ 表示区分大小写的正则匹配，
+
 比较flag标记位的redirect、last。
 
 ```
@@ -150,21 +152,7 @@ redirect日志:
 
 而redirect 和permanent 也可以重定向到其他的网页。完成重定向
 
-
-
-
-
-
-
-
-
-
-
-
-
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
 [https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/](https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/)
-
-
 
