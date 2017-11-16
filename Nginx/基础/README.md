@@ -42,13 +42,7 @@
 
 ![](/assets/sendfile2.png)
 
-nginx在支持了sendfile系统调用后，避免了内核
-
-层与用户层的上线文切换（content swith）工作，
+nginx在支持了sendfile系统调用后，避免了内核层与用户层的上线文切换（content swith）工作，
 
 大大减少了系统性能的开销。
-
-
-
-
 
