@@ -152,6 +152,12 @@ redirect日志:
 
 而redirect 和permanent 也可以重定向到其他的网页。完成重定向
 
+* rewrite 规则在不同模块下的优先级是不同的。
+
+1. 执行server 块中rewrite指令
+2. 执行location 匹配
+3. 执行location 的rewrite 指令
+
 接下来看一个redirect的应用
 
 ```
@@ -181,11 +187,7 @@ server {
 
 第三个rewrite，当请求的文件在/root/opt/app/code 中不存在时，这里的 -f 就是判断 请求文件在此目录下是否存在，不存在时重定向到百度页面。
 
-rewrite 规则在不同模块下的优先级是不同的。
 
-1. 执行server 块中rewrite指令
-2. 执行location 匹配
-3. 执行location 的rewrite 指令
 
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
