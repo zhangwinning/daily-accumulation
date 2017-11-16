@@ -173,7 +173,7 @@ server {
 }
 ```
 
-~ ^/http\_user\_agent 其中 ~ 表示区分大小写的正则匹配，如果这个匹配不成，走通用匹配
+~ ^/http\_user\_agent 其中 ~ 表示区分大小写的正则匹配，如果这个匹配不成，走通用匹配 /
 
 先看第一个rewrite，若请求路径为\`/course-2-2-2.html\`， 因为rewrite 的标志位是break，说明请求静态文件，而请求的静态文件位置为  root/opt/app/code/course/2/2/course\_2.html；
 
