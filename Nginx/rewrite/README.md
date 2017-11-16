@@ -179,7 +179,7 @@ server {
 
 第二个rewrite 是表示 开头以nginx开头，这时会重定向到[https://www.baidu.com。](https://www.baidu.com。)
 
-第三个rewrite表示 任何访问路径 重定向到 [http://www.baidu.com/](http://www.baidu.com/)    ，
+第三个rewrite，当请求的文件在/root/opt/app/code 中不存在时，这里的 -f 就是判断 请求文件在此目录下是否存在，不存在时重定向到百度页面。
 
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
