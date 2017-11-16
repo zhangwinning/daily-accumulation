@@ -152,7 +152,46 @@ redirect日志:
 
 而redirect 和permanent 也可以重定向到其他的网页。完成重定向
 
+接下来看一个redirect的应用
+
+```
+server {
+        listen  8000 ;
+        server_name localhost;
+        root /root/opt/app/code;
+        location / {
+                rewrite ^/course-(\d+)-(\d+)-(\d+)\.html$ /course/$1/$2/course_$3.html break;
+                rewrite  ^/nginx https://www.baidu.com redirect;
+                if (!-f $request_filename) {
+                        rewrite ^/(.*)$ http://www.baidu.com/$1 redirect;
+                }
+        }
+        location ~ ^/http_user_agent {
+                echo 'test';
+                return 200 '{"http_user_agent": "$http_user_agent", "request_filename": "$request_filename", "-f $request_filename": "-f $request_filename"}';
+        }
+}
+```
+
+
+
+
+
+
+
+
+
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
 [https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/](https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/)
+
+
+
+
+
+
+
+
+
+
 
