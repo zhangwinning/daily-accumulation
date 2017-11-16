@@ -36,5 +36,13 @@
 
 * Nginx 的sendfile
 
+![](/assets/sendfile1.png)
 
+               从内核层用read系统调用读到用户层，再从用户层用write系统调用写到内核层，效率低下。
+
+
+
+
+
+![](/assets/sendfile2.png)
 
