@@ -160,11 +160,11 @@ server {
         server_name localhost;
         root /root/opt/app/code;
         location / {
-                rewrite ^/course-(\d+)-(\d+)-(\d+)\.html$ /course/$1/$2/course_$3.html break;
-                rewrite  ^/nginx https://www.baidu.com redirect;
-                if (!-f $request_filename) {
-                        rewrite ^/(.*)$ http://www.baidu.com/$1 redirect;
-                }
+#                rewrite ^/course-(\d+)-(\d+)-(\d+)\.html$ /course/$1/$2/course_$3.html break;
+#                rewrite  ^/nginx https://www.baidu.com redirect;
+               	  if (!-f $request_filename) {
+		 	rewrite ^/(.*)$ http://www.baidu.com/$1 redirect;
+		  }
         }
         location ~ ^/http_user_agent {
                 echo 'test';
@@ -180,8 +180,6 @@ server {
 第二个rewrite 是表示 开头以nginx开头，这时会重定向到[https://www.baidu.com。](https://www.baidu.com。)
 
 第三个rewrite表示 任何访问路径 重定向到 [http://www.baidu.com/](http://www.baidu.com/)    ，
-
-
 
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
