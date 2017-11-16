@@ -154,9 +154,11 @@ redirect日志:
 
 * rewrite 规则在不同模块下的优先级是不同的。
 
-1. 执行server 块中rewrite指令
-2. 执行location 匹配
-3. 执行location 的rewrite 指令
+  * 执行server 块中rewrite指令
+
+  * 执行location 匹配
+
+  * 执行location 的rewrite 指令
 
 接下来看一个redirect的应用
 
@@ -186,8 +188,6 @@ server {
 第二个rewrite 是表示 开头以nginx开头，这时会重定向到[https://www.baidu.com。](https://www.baidu.com。)
 
 第三个rewrite，当请求的文件在/root/opt/app/code 中不存在时，这里的 -f 就是判断 请求文件在此目录下是否存在，不存在时重定向到百度页面。
-
-
 
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
