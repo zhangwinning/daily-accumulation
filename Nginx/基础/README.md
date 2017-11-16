@@ -1,4 +1,4 @@
-![](/assets/01-Nginx 概念、优势.png)
+![](/assets/Nginx概念优势.png)
 
 * 概念
 
