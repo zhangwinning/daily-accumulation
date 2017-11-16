@@ -173,6 +173,14 @@ server {
 }
 ```
 
+~ ^/http\_user\_agent 其中 ~ 表示区分大小写的正则匹配，如果这个匹配不成，走通用匹配
+
+
+
+
+
+
+
 
 
 
@@ -184,14 +192,4 @@ server {
 [http://seanlook.com/2015/05/17/nginx-location-rewrite/](http://seanlook.com/2015/05/17/nginx-location-rewrite/ "nginx配置location总结及rewrite规则写法")
 
 [https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/](https://yuerblog.cc/2017/06/12/nginx-rewrite-problem/)
-
-
-
-
-
-
-
-
-
-
 
