@@ -177,21 +177,9 @@ server {
 
 先看第一个rewrite，若请求路径为\`/course-2-2-2.html\`， 因为rewrite 的标志位是break，说明请求静态文件，而请求的静态文件位置为  root/opt/app/code/course/2/2/course\_2.html；
 
-第二个rewrite 是表示 开头以nginx开头，这时会重定向到https://www.baidu.com。
+第二个rewrite 是表示 开头以nginx开头，这时会重定向到[https://www.baidu.com。](https://www.baidu.com。)
 
-第三个rewrite表示 任何访问路径 重定向到 http://www.baidu.com/    ，
-
-
-
-
-
-
-
-
-
-
-
-
+第三个rewrite表示 任何访问路径 重定向到 [http://www.baidu.com/](http://www.baidu.com/)    ，
 
 
 
