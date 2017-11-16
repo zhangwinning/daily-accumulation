@@ -54,11 +54,11 @@ server {
 }
 ```
 
+~ 表示区分大小写的正则匹配。
+
 访问 \`/break\` 会匹配第一个location，标志位是 break ，这时nginx会找root目录下的/static/目录的index.html文件，如果没有，返回404，找到显示。
 
 而访问\`/last\`会匹配第二个location，标志位是 last ，这时nginx会_重新匹配一个请求URL为/test/的_，匹配第三个location，返回结果。
-
-~ 表示区分大小写的正则匹配，
 
 比较flag标记位的redirect、last。
 
