@@ -162,9 +162,9 @@ server {
         location / {
 #                rewrite ^/course-(\d+)-(\d+)-(\d+)\.html$ /course/$1/$2/course_$3.html break;
 #                rewrite  ^/nginx https://www.baidu.com redirect;
-               	  if (!-f $request_filename) {
-		 	rewrite ^/(.*)$ http://www.baidu.com/$1 redirect;
-		  }
+                 if (!-f $request_filename) {
+                             rewrite ^/(.*)$ http://www.baidu.com/$1 redirect;
+                  }
         }
         location ~ ^/http_user_agent {
                 echo 'test';
