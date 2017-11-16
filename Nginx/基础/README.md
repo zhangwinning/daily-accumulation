@@ -31,10 +31,10 @@
   * 代码模块化
 
 * CPU的亲和  affinity
+
   * 把CPU核心和Nginx 工作进程绑定的方式，把每个worker进程固定到一个CPU上执行，减少切换CPU时间，获得更好的性能。
+
 * Nginx 的sendfile
-
-
 
 
 
