@@ -12,6 +12,27 @@ router 是express中一个非常重要的数据结构，它是作为一个大容
 
 /lib/router/index.js中。
 
+1、Array.prototype.slice.call\(argumens\);
+
+把类数组对象转化为数组，并且返回转化后的数组
+
+```
+function foo () {
+	console.log(arguments)
+  	console.log(Array.prototype.slice.call(arguments))
+  	console.log(Array.prototype.slice.call(arguments, 1))
+  	console.log(arguments);
+}
+foo ('hello', 'world')
+
+{ '0': 'hello', '1': 'world' }
+[ 'hello', 'world' ]
+[ 'world' ]
+{ '0': 'hello', '1': 'world' }
+```
+
+
+
 ### 流程
 
 看一段代码
