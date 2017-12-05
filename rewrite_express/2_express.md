@@ -18,10 +18,10 @@ router 是express中一个非常重要的数据结构，它是作为一个大容
 
 ```
 function foo () {
-	console.log(arguments)
-  	console.log(Array.prototype.slice.call(arguments))
-  	console.log(Array.prototype.slice.call(arguments, 1))
-  	console.log(arguments);
+    console.log(arguments)
+      console.log(Array.prototype.slice.call(arguments))
+      console.log(Array.prototype.slice.call(arguments, 1))
+      console.log(arguments);
 }
 foo ('hello', 'world')
 
@@ -30,8 +30,6 @@ foo ('hello', 'world')
 [ 'world' ]
 { '0': 'hello', '1': 'world' }
 ```
-
-
 
 ### 流程
 
@@ -45,7 +43,7 @@ app.get('/', (req, res) => res.send('Hello World!') );
 
 #### 添加请求方法
 
-app对象中请求方法是在application.js中添加的，而app\[method\]会在调用路由中间件时执行。
+app对象中请求方法是在application.js的以下代码中添加的，而app\[method\]会在调用路由中间件时执行。
 
     methods.forEach(function (method) {
         app[method] = function (path) {
