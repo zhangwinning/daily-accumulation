@@ -1,6 +1,6 @@
 # 重写express\(一\)
 
-一直以为学好一个东西最好的方法，就是实现它，接下来我就会一步步实现express。
+一直以为学好一个东西最好的方法，就是实现它，接下来就会一步步实现express。
 
 ## 预备知识
 
@@ -97,3 +97,4 @@ app.listen = function listen() {
 这里的this 是express应用中的app，this在这里是作为函数执行，这个函数会添加到服务器的request事件，这样的话，当每个请求到来后，app函数就是处理函数。
 
 return server.listen.apply\(server, arguments\);  以server 作为上下文，调用listen方法启动服务器。
+
