@@ -14,3 +14,21 @@ router 是express中一个非常重要的数据结构，它是作为一个大容
 
 
 
+
+
+
+
+
+
+
+
+### 流程
+
+看一段代码
+
+```
+app.get('/', (req, res) => res.send('Hello World!') );
+```
+
+
+
