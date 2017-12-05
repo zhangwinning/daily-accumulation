@@ -18,7 +18,7 @@ router 是express中一个非常重要的数据结构，它是作为一个大容
 
 ```
 function foo () {
-    console.log(arguments)
+      console.log(arguments)
       console.log(Array.prototype.slice.call(arguments))
       console.log(Array.prototype.slice.call(arguments, 1))
       console.log(arguments);
