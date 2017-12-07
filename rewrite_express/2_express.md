@@ -4,7 +4,7 @@
 
 ### 目标：实现一个路由
 
-app.get\('/', \(req, res\) =&gt; res.send\('Hello World!'\) \);
+app.get\('/', \(req, res\) =&gt; res.send\('Hello World!'\) \)
 
 ### 预备知识
 
