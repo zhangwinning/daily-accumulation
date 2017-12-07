@@ -55,7 +55,7 @@ app.listen(3001, function () {
 
 2、
 
-app.get\(\)会在调用路由中间件时执行。
+app\[method\] 函数会在调用路由中间件（例如 app.get\(\)）时执行。
 
     methods.forEach(function (method) {
         app[method] = function (path) {
@@ -65,6 +65,19 @@ app.get\(\)会在调用路由中间件时执行。
             return this;
         }
     });
+
+```
+this.lazyrouter() 
+这个方法会创建router对象，而这个对象会一直绑定到应用的_router属性上，创建的router对象在每个应用中只有一个。
+```
+
+
+
+
+
+
+
+
 
 
 
