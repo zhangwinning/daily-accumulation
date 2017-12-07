@@ -53,7 +53,7 @@ app.listen(3001, function () {
 
 1、执行express后，会在app对象中添加各种请求方法。
 
-2、
+2、构建关联
 
 app\[method\] 函数会在调用路由中间件（例如 app.get\(\)）时执行。
 
