@@ -49,17 +49,13 @@ app.listen(3001, function () {
 3、createServer(app)  // 请求方法的执行，请求到来后，调用函数app()
 ```
 
-看一段代码
+具体实现
 
-```
-app.get('/', (req, res) => res.send('Hello World!') );
-```
+1、执行express后，会在app对象中添加各种请求方法。
 
-从表面看来，get方法可以将url中的path与后台程序关联起来，是不是这样呢，看看
+2、
 
-#### 添加请求方法
-
-app对象中请求方法是在application.js的以下代码中添加的，而app\[method\]会在调用路由中间件时执行。
+app.get\(\)会在调用路由中间件时执行。
 
     methods.forEach(function (method) {
         app[method] = function (path) {
