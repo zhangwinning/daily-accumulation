@@ -31,15 +31,23 @@ foo ('hello', 'world')
 
 ### 流程
 
-路由get的添加可以分为三板斧
+```
+let express = require('./express');
+let app = express();
+
+app.get('/test', (req, res) => res.send('Hello World!'));
+app.listen(3001, function () {
+    console.log('the server is listening:', 3001);
+});
+```
+
+路由get的添加分为三板斧
 
 ```
 1、express()   //为应用添加各种请求方法
 2、app.get('/test', (req, res) => {})  // 构建前端请求和后端处理程序的关联
 3、createServer(app)  // 请求方法的执行，请求到来后，调用函数app()
 ```
-
-
 
 看一段代码
 
