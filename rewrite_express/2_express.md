@@ -4,13 +4,13 @@
 
 ### 目标：实现一个路由
 
-app.get\('/', \(req, res\) =&gt; res.send\('Hello World!'\) \)
+app.get\('/test', \(req, res\) =&gt; res.send\('Hello World!'\) \)
 
 ### 预备知识
 
 1、Array.prototype.slice.call\(argumens\);
 
-把类数组对象转化为数组，并且返回转化后的数组
+把类数组对象转化为数组，并且返回转化后的数组。
 
 ```
 function foo () {
@@ -27,9 +27,19 @@ foo ('hello', 'world')
 { '0': 'hello', '1': 'world' }
 ```
 
-2、require模块时，Node对模块进行缓存，第二次require时，是不会重复开销的
+2、require模块时，Node对模块进行缓存，第二次require时，是不会重复开销的。
 
 ### 流程
+
+路由get的添加可以分为三板斧
+
+```
+1、express()   //为应用添加各种请求方法
+2、app.get('/test', (req, res) => {})  // 构建前端请求和后端处理程序的关联
+3、createServer(app)  // 请求方法的执行，请求到来后，调用函数app()
+```
+
+
 
 看一段代码
 
