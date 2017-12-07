@@ -60,7 +60,8 @@ app\[method\] 函数会在调用路由中间件（例如 app.get\(\)）时执行
     methods.forEach(function (method) {
         app[method] = function (path) {
             this.lazyrouter();  //新建一个`router`对象
-            let route = this._router.route(path); //新建一个route并添加到刚刚建立的router的stack中，这里实际上是调用的`router`函数
+            let route = this._router.route(path); //新建一个route并添加到刚刚建立的router的stack中，
+            这里实际上是调用的`router`函数
             route[method].apply(route, slice.call(arguments, 1)); //为route添加stack
             return this;
         }
@@ -70,14 +71,6 @@ app\[method\] 函数会在调用路由中间件（例如 app.get\(\)）时执行
 this.lazyrouter() 
 这个方法会创建router对象，而这个对象会一直绑定到应用的_router属性上，创建的router对象在每个应用中只有一个。
 ```
-
-
-
-
-
-
-
-
 
 
 
