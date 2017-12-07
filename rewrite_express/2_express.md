@@ -67,10 +67,9 @@ app\[method\] 函数会在调用路由中间件（例如 app.get\(\)）时执行
         }
     });
 
-```
-this.lazyrouter() 
-这个方法会创建router对象，而这个对象会一直绑定到应用的_router属性上，创建的router对象在每个应用中只有一个。
-```
+    this.lazyrouter() 
+    这个方法会创建router对象，而这个对象会一直绑定到应用的_router属性上，创建的router对象在每个应用中只有一个。
+    `express.js`中的app对象和这里创建的router对象是结构相似的(router对象本身是个函数，并且添加一些属性)。
 
 
 
