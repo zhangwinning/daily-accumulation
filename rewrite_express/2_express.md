@@ -31,6 +31,8 @@ foo ('hello', 'world')
 { '0': 'hello', '1': 'world' }
 ```
 
+2、require模块时，Node对模块进行缓存，第二次require时，是不会重复开销的
+
 ### 流程
 
 看一段代码
